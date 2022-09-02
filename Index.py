@@ -16,10 +16,10 @@ class product:
     #Clase Nomina
     def __init__(self, window):         #Constructor que hace que cada vez que se inicia la clase, ejecute una instancia que le de nombre a la ventana de la aplicacion  
         self.wind = window
-        self.wind.title('Products Aplication')
+        self.wind.title('Register Employees')
         
         #Aqui se va a crear el frame es decir el lugar donde se van a  poder acomodar lo elemetos
-        frame = LabelFrame(self.wind, text = 'Register a new Product')
+        frame = LabelFrame(self.wind, text = 'Register a new Employee')
         frame.grid(row = 0, column = 0, columnspan= 3, pady=20)
         
         #Entrada de datos/input  = Nombre
@@ -54,7 +54,7 @@ class product:
         
       
         #Boton Entrada de Productos
-        ttk.Button(frame, text= ' SaveProduct ', command=self.add_product).grid(row = 6, columnspan= 2, sticky =W + E)
+        ttk.Button(frame, text= ' Register Employee ', command=self.add_product).grid(row = 6, columnspan= 2, sticky =W + E)
         
 
         #Mensajes de alerta
@@ -62,7 +62,7 @@ class product:
         self.message.grid(row = 3, column=0, columnspan= 2, sticky= W+E)
         
         #Tabla
-        self.tree = ttk.Treeview(height = 10, columns= ('#1', '#2', '#3','#4','#5'))
+        self.tree = ttk.Treeview(height = 10, columns= ('#1', '#2', '#3','#4','#5','#6', '#7', '#8', '#9'))
         self.tree['show'] = 'headings'
         self.tree.grid(row = 7, column = 0, columnspan = 6)
         self.tree.heading('#1', text = 'Name', anchor= CENTER)
@@ -70,6 +70,10 @@ class product:
         self.tree.heading('#3', text = 'Id Document', anchor= CENTER)
         self.tree.heading('#4', text = 'Wage', anchor= CENTER)
         self.tree.heading('#5', text = 'Worked Days', anchor= CENTER)
+        self.tree.heading('#6', text = 'Pension', anchor= CENTER)
+        self.tree.heading('#7', text = 'Salud', anchor= CENTER)
+        self.tree.heading('#8', text = 'Subsidio Transporte', anchor= CENTER)
+        self.tree.heading('#9', text = 'Salario Neto', anchor= CENTER)
         
         
         
